@@ -1,0 +1,3 @@
+/data/*
+!/data/manual_spans.jsonl
+/runs/

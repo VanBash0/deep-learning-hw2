@@ -1,0 +1,94 @@
+{
+  "track": "nlp",
+  "model": "cointegrated/rubert-tiny2",
+  "revision": "e8ed3b0c8bbf4fb6984c3de043bf7d2f4e5969ae",
+  "dataset": "Babelscape/wikineural",
+  "classes": [
+    "LOC",
+    "MISC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 92320,
+  "n_val": 11540,
+  "n_test": 11580,
+  "params_total": 29098929,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.5843722774656773,
+      "f1_macro": 0.5089478842707436,
+      "precision": 0.6450885454666048,
+      "recall": 0.5341021416803954
+    },
+    "random_head": {
+      "f1_micro": 0.0362536447121018,
+      "f1_macro": 0.03157555057145472,
+      "precision": 0.020124035698078958,
+      "recall": 0.18264689730917077
+    }
+  },
+  "final": {
+    "f1_micro": 0.8604053980221822,
+    "f1_macro": 0.8313082628647601,
+    "precision": 0.8508752971687918,
+    "recall": 0.8701513979445242,
+    "token_f1": 0.8749872809784489,
+    "per_type": {
+      "LOC": {
+        "precision": 0.9181367462239133,
+        "recall": 0.9263610981852024,
+        "f1-score": 0.9222305866002665,
+        "support": 8596
+      },
+      "MISC": {
+        "precision": 0.7521739130434782,
+        "recall": 0.7592842673869007,
+        "f1-score": 0.755712365591398,
+        "support": 2962
+      },
+      "ORG": {
+        "precision": 0.7485998755444928,
+        "recall": 0.7885939036381514,
+        "f1-score": 0.7680766161213088,
+        "support": 3051
+      },
+      "PER": {
+        "precision": 0.8620214816854861,
+        "recall": 0.8971051877328747,
+        "f1-score": 0.8792134831460674,
+        "support": 3489
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "full_finetuning": {
+      "f1_micro": 0.858245671260431,
+      "f1_macro": 0.8238954803863173,
+      "precision": 0.849722805317832,
+      "recall": 0.8669412410763316,
+      "token_f1": 0.8703538074339081,
+      "seconds": 308.2749365000009,
+      "trainable_params": 29098929
+    },
+    "frozen_encoder": {
+      "f1_micro": 0.6323922419495673,
+      "f1_macro": 0.5375847107133457,
+      "precision": 0.6102231527345147,
+      "recall": 0.6562328390993959,
+      "token_f1": 0.6648483526074623,
+      "seconds": 162.05859679999958,
+      "trainable_params": 2817
+    }
+  },
+  "errors": {
+    "correct": 15787,
+    "boundary": 681,
+    "type": 1364,
+    "missed": 378,
+    "spurious": 586
+  },
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "train_time_sec": 308.2749365000009,
+  "fast_mode": false
+}
